@@ -1,5 +1,5 @@
 /**
- * Title     : Merge two sorted arrays with O(1) extra space
+ * Title     : Merge two sorted arrays
  * Author    : Tridib Samanta
  **/
 
@@ -7,20 +7,20 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void mergeArrays(int a[], int b[], int m, int n) {
+void mergeArrays(int a[], int b[], int m, int n, int c[]) {
 
-    for (int i = n - 1; i >= 0; --i) {
+    int i = 0, j =0, k = 0;
 
-        int j, last = a[m-1];
-
-        for (j = m-2; j>=0 && a[j] > b[i]; --j)
-            a[j+1] = a[j];
-
-        if (j != m-2 || last > b[i]) {
-            a[j+1] = b[i];
-            b[i] = last;
-        }
+    while (i < m && j < n) {
+        if (a[i] < b[j])
+            c[k++] = a[i++];
+        else
+            c[k++] = b[j++];
     }
+    while (i < m)
+        c[k++] = a[i++];
+    while (j < n)
+        c[k++] = b[j++];
 }
 
 int main() {
@@ -43,25 +43,22 @@ int main() {
     for (int i = 0; i < n; ++i)
         cin >> b[i];
 
-    mergeArrays(a, b, m, n);
+    int c[m+n];
+
+    mergeArrays(a, b, m, n, c);
 
     cout << "\nAfter Merging -\n";
 
-    cout << "Array 1 is = ";
-    for (int i = 0; i < m; ++i)
-        cout << a[i] << " ";
-    cout << "\n";
-
-    cout << "Array 2 is = ";
-    for (int i = 0; i < n; ++i)
-        cout << b[i] << " ";
+    cout << "Array is = ";
+    for (int i = 0; i < m+n; ++i)
+        cout << c[i] << " ";
     cout << "\n";
 
     return 0;
 }
 
 /*
- * Time Complexity  : O(m*n)
- * Auxiliary Space  : O(1)
+ * Time Complexity  : O(m+n)
+ * Auxiliary Space  : O(m+n)
 */
 
