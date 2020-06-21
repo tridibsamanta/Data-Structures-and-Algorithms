@@ -67,7 +67,7 @@ Node *getClosestElement(Node *root, int key) {
 }
 */
 
-// Approach 2 : (Using Pre-order Traversal)
+// Approach 2 : (Exploiting BST properties)
 
 void getClosestElementUtil(Node *root, int key, int &min_diff, Node* &element) {
     if (!root)
