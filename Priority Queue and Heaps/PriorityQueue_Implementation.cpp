@@ -39,7 +39,7 @@ void heapifyDown(int pos) {
 
     if ((leftChildIdx < pq.size()) && (pq[leftChildIdx] > pq[pos]))
         maxIdx = leftChildIdx;
-    if ((rightChildIdx < pq.size()) && (pq[rightChildIdx] > pq[pos]))
+    if ((rightChildIdx < pq.size()) && (pq[rightChildIdx] > pq[maxIdx]))
         maxIdx = rightChildIdx;
 
     if (maxIdx != pos) {
