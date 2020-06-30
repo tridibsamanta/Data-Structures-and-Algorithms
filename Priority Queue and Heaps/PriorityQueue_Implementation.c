@@ -71,7 +71,7 @@ void heapifyDown(struct Heap *h, int pos) {
     if ((lChildIdx < h -> count) && (h -> array[lChildIdx] > h -> array[pos]))
         maxIdx = lChildIdx;
 
-    if ((rChildIdx < h -> count) && (h -> array[rChildIdx] > h -> array[pos]))
+    if ((rChildIdx < h -> count) && (h -> array[rChildIdx] > h -> array[maxIdx]))
         maxIdx = rChildIdx;
 
     if (maxIdx != pos) {
