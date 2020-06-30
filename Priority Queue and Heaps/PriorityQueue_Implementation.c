@@ -28,7 +28,7 @@ struct Heap* createHeap(int capacity) {
         return;
     }
     return h;
-};
+}
 // Time Complexity : O(1)
 
 /* Get index of parent node */
