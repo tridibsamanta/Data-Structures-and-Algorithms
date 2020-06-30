@@ -64,7 +64,7 @@ void heapifyDown(struct Heap *h, int pos) {
     int minIdx = pos;
     if ((leftChildIdx < h -> count) && (h -> array[leftChildIdx] < h -> array[pos]))
         minIdx = leftChildIdx;
-    if ((rightChildIdx < h -> count) && (h -> array[rightChildIdx] < h -> array[pos]))
+    if ((rightChildIdx < h -> count) && (h -> array[rightChildIdx] < h -> array[minIdx]))
         minIdx = rightChildIdx;
     if (minIdx != pos) {
         int temp = h -> array[pos];
