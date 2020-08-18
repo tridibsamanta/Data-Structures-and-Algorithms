@@ -8,3 +8,6 @@
 
 
 •	[Merge Sort](https://github.com/tridibsamanta/Data-Structures-and-Algorithms/blob/master/Sorts/MergeSort.cpp)
+
+
+•	[Heap Sort](https://github.com/tridibsamanta/Data-Structures-and-Algorithms/blob/master/Sorts/HeapSort.cpp)
